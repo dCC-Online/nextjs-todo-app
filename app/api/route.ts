@@ -1,11 +1,7 @@
 import fs from 'fs';
 import { NextRequest } from 'next/server';
 import path from 'path';
-type toDo = {
-  id:number,
-  task:string,
-  dueDate:string
-}
+import { toDo } from '../lib/types';
 export async function GET(request: Request) {
   const filePath = path.join(process.cwd(), 'public', 'data.json');
 
