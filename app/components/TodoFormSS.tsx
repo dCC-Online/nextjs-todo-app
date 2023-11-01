@@ -6,6 +6,7 @@ import React from "react";
 export default function TodoFormSS() {
   
   const addTodo = async (data: FormData) => {
+    "use server"
     // Logic to mutate form data...
     const task = data.get("task")?.toString();
     const dueDate = data.get("dueDate")?.toString();
@@ -26,7 +27,7 @@ export default function TodoFormSS() {
       <div className="max-w-xl mx-auto px-4 w-full">
         <h1 className="text-4xl font-bold mb-5">Add A New To-Do</h1>
         {/* Invoke the action using the "action" attribute */}
-        <form action={addTodo} className="space-y-4">
+        <form className="space-y-4">
           <div>
             <label className="block text-sm font-medium mb-1">Task:</label>
             <input
